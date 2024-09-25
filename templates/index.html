@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ping Monitor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>Ping Monitor</h1>
+    <div class="input-group">
+        <label for="ip1">IP 1:</label>
+        <input type="text" id="ip1" placeholder="Digite o primeiro IP">
+    </div>
+    <div class="input-group">
+        <label for="ip2">IP 2:</label>
+        <input type="text" id="ip2" placeholder="Digite o segundo IP">
+    </div>
+    <button onclick="startPing()">Iniciar Ping</button>
+
+    <h2>Estatísticas:</h2>
+    <div class="stats">
+        <div>
+            <h3>IP 1 (<span id="ip1-label"></span>)</h3>
+            <p>Total de pacotes: <span id="total1">0</span></p>
+            <p>Pacotes perdidos: <span id="perdidos1">0</span></p>
+            <p>Taxa de perda: <span id="taxa1">0.00%</span></p>
+        </div>
+        <div>
+            <h3>IP 2 (<span id="ip2-label"></span>)</h3>
+            <p>Total de pacotes: <span id="total2">0</span></p>
+            <p>Pacotes perdidos: <span id="perdidos2">0</span></p>
+            <p>Taxa de perda: <span id="taxa2">0.00%</span></p>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
